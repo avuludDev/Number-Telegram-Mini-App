@@ -1,0 +1,17 @@
+{
+  "name": "bot",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "deploy": "rsync -avz --delete --exclude=node_modules ./ develop@185.233.37.26:/home/develop/bot && ssh develop@185.233.37.26 'cd /home/develop/bot && npm i && pm2 restart bot'"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "telegraf": "^4.16.3",
+    "axios": "1.7.9"  }
+}
